@@ -15,8 +15,7 @@ import { fontFamily } from "./fonts";
 // فيديو "كل ألعاب تحداك" — عمودي 1080×1920
 export const FPS = 30;
 
-// لما يجهز التعليق الصوتي: حط الملفات في public/voice/<id>.mp3 وخلّها true
-const VOICE_READY = false;
+// مدة كل مشهد مضبوطة على وقفات التعليق الصوتي في public/voice/narration.mp3
 
 const C = {
   navy: "#0B1533",
@@ -48,11 +47,11 @@ type SceneDef = {
 };
 
 export const SCENES: SceneDef[] = [
-  { id: "01-intro", kind: "intro", sec: 3.6, vo: "يا هلا! جمعتكم حلوة… بس ناقصها شي… تحدي!" },
+  { id: "01-intro", kind: "intro", sec: 3.78, vo: "يا هلا! جمعتكم حلوة… بس ناقصها شي… تحدي!" },
   {
     id: "02-tease",
     kind: "game",
-    sec: 3.6,
+    sec: 3.03,
     vo: "تحداك… عشرين لعبة، للكبار والصغار!",
     title: "تحداك",
     emoji: "🎮",
@@ -62,7 +61,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "03-huroof",
     kind: "game",
-    sec: 5,
+    sec: 7.02,
     vo: "في تحدي الحروف: اختر حرفك، جاوب صح، وصِل خطّك قبل الفريق الثاني!",
     title: "تحدي الحروف",
     emoji: "🔤",
@@ -72,7 +71,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "04-fiat",
     kind: "game",
-    sec: 5.6,
+    sec: 8.21,
     vo: "تحدي الفئات: كل فريق يختار ثلاث فئات، من ميتين لثمانمية نقطة… وكل ما زادت النقاط، زادت الحرارة!",
     title: "تحدي الفئات",
     emoji: "🏆",
@@ -82,7 +81,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "05-asra",
     kind: "game",
-    sec: 4.4,
+    sec: 6.18,
     vo: "الأسرع: كلكم تجاوبون من جوالاتكم… والأسرع يطلع منصة التتويج!",
     title: "الأسرع",
     emoji: "⚡",
@@ -92,17 +91,17 @@ export const SCENES: SceneDef[] = [
   {
     id: "06-mnana",
     kind: "game",
-    sec: 4,
+    sec: 4.73,
     vo: "من أنا؟ خمس تلميحات… كل ما عرفت أبكر، كسبت أكثر!",
     title: "من أنا؟",
     emoji: "🕵️",
     color: C.grape,
-    clips: [{ src: "mnana", rate: 1.5 }],
+    clips: [{ src: "mnana", rate: 1.4 }],
   },
   {
     id: "07-sahkhata",
     kind: "game",
-    sec: 3.3,
+    sec: 2.18,
     vo: "صح أو خطأ؟ ثمان ثواني بس… قرّر!",
     title: "صح أو خطأ",
     emoji: "✅",
@@ -112,17 +111,17 @@ export const SCENES: SceneDef[] = [
   {
     id: "08-akthar",
     kind: "game",
-    sec: 3.5,
+    sec: 4.52,
     vo: "الأكثر أو الأقل: أيهم أعلى؟ خمّن وكمّل السلسلة!",
     title: "الأكثر أو الأقل",
     emoji: "↕️",
     color: C.orange,
-    clips: [{ src: "akthar", rate: 1.6 }],
+    clips: [{ src: "akthar", rate: 1.4 }],
   },
   {
     id: "09-sura",
     kind: "game",
-    sec: 3.6,
+    sec: 3.55,
     vo: "في أي سورة؟ تطلع لك آية… وانت تعرف سورتها.",
     title: "في أي سورة؟",
     emoji: "📖",
@@ -132,7 +131,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "10-mathal",
     kind: "game",
-    sec: 4,
+    sec: 3.27,
     vo: "وأكمل المثل… صاحب الحاجة…؟ أرعن!",
     title: "أكمل المثل",
     emoji: "💬",
@@ -142,7 +141,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "11-cards",
     kind: "game",
-    sec: 5,
+    sec: 4.69,
     vo: "وللمّة الحلوة: جاكارو بالورق والكرات، ولودو والنرد يحكم!",
     title: "جاكارو ولودو",
     emoji: "🎲",
@@ -152,7 +151,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "12-brain",
     kind: "chips",
-    sec: 5.4,
+    sec: 5.89,
     vo: "تبي تشغّل مخك؟ كلمة اليوم، عشرة، بلوكات بنقشة السدو، والمتقاطعة.",
     title: "ألعاب الذكاء",
     emoji: "🧠",
@@ -168,7 +167,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "13-board",
     kind: "chips",
-    sec: 6.2,
+    sec: 7.24,
     vo: "وألعاب المجالس: مرطاخ، الضامة، الشطرنج حتى ثلاثي الأبعاد، إكس أو وأربعة في خط!",
     title: "ألعاب المجالس",
     emoji: "♟️",
@@ -185,17 +184,17 @@ export const SCENES: SceneDef[] = [
   {
     id: "14-kids",
     kind: "game",
-    sec: 7,
+    sec: 10.92,
     vo: "وللصغار ركن الأطفال: مسابقات على قدّهم، ألعاب ذكاء، ومدرستي يراجعون دروسهم وهم يلعبون… وبدون أونلاين مع غرباء.",
     title: "ركن الأطفال",
     emoji: "🧸",
     color: C.pink,
-    clips: [{ src: "kids" }],
+    clips: [{ src: "kids", rate: 0.75 }],
   },
   {
     id: "15-madrasti",
     kind: "game",
-    sec: 4.4,
+    sec: 3.5,
     vo: "وحتى طلاب المتوسط والثانوي: اختر صفك ومادتك… وتحدّى!",
     title: "مدرستي",
     emoji: "🎒",
@@ -205,7 +204,7 @@ export const SCENES: SceneDef[] = [
   {
     id: "16-soon",
     kind: "soon",
-    sec: 4.6,
+    sec: 2.99,
     vo: "وقريب: كيرم، وين المكان؟، وفتوحات المملكة!",
     title: "قريباً",
     emoji: "🚀",
@@ -219,13 +218,19 @@ export const SCENES: SceneDef[] = [
   {
     id: "17-outro",
     kind: "outro",
-    sec: 5.5,
+    sec: 7.06,
     vo: "جمعتكم أحلى مع تحداك… ادخل الحين tahaddak.com وتحدّاهم!",
   },
 ];
 
-const frames = (s: SceneDef) => Math.round(s.sec * FPS);
-export const TOTAL_FRAMES = SCENES.reduce((a, s) => a + frames(s), 0);
+// نحسب البداية من المجموع التراكمي عشان ما يتراكم خطأ التقريب ويطلع الصوت عن المشهد
+const TIMELINE = SCENES.reduce<{ start: number; dur: number; end: number }[]>((acc, s) => {
+  const startSec = acc.length ? acc[acc.length - 1].end : 0;
+  const start = Math.round(startSec * FPS);
+  const end = startSec + s.sec;
+  return [...acc, { start, dur: Math.round(end * FPS) - start, end }];
+}, []);
+export const TOTAL_FRAMES = Math.round(TIMELINE[TIMELINE.length - 1].end * FPS);
 
 // ───────── عناصر مشتركة ─────────
 
@@ -438,7 +443,7 @@ const ChipRow: React.FC<{ chips: Chip[]; color: string; top: number; delay: numb
 
 const Intro: React.FC<{ s: SceneDef; dur: number }> = () => {
   const frame = useCurrentFrame();
-  const shake = frame > 62 ? Math.sin(frame * 1.7) * Math.max(0, 8 - (frame - 62) * 0.5) : 0;
+  const shake = frame > 86 ? Math.sin(frame * 1.7) * Math.max(0, 8 - (frame - 86) * 0.5) : 0;
   return (
     <Base>
       <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 40 }}>
@@ -448,10 +453,10 @@ const Intro: React.FC<{ s: SceneDef; dur: number }> = () => {
         <Pop delay={8}>
           <div style={{ fontSize: 86, fontWeight: 900 }}>يا هلا!</div>
         </Pop>
-        <Pop delay={24}>
+        <Pop delay={30}>
           <div style={{ fontSize: 64, fontWeight: 700, color: "#C9D2F0" }}>جمعتكم حلوة… بس ناقصها شي</div>
         </Pop>
-        <Pop delay={60}>
+        <Pop delay={84}>
           <div
             style={{
               fontSize: 210,
@@ -623,21 +628,18 @@ const SceneShell: React.FC<{ dur: number; children: React.ReactNode; last: boole
 };
 
 export const TahaddakGames: React.FC = () => {
-  let from = 0;
   return (
     <AbsoluteFill style={{ backgroundColor: C.navy }}>
       <Background />
+      <Audio src={staticFile("voice/narration.mp3")} />
       {SCENES.map((s, i) => {
-        const dur = frames(s);
+        const { start, dur } = TIMELINE[i];
         const Comp = SCENE_COMPONENTS[s.kind];
-        const start = from;
-        from += dur;
         return (
           <Sequence key={s.id} from={start} durationInFrames={dur} name={s.id}>
             <SceneShell dur={dur} last={i === SCENES.length - 1}>
               <Comp s={s} dur={dur} />
             </SceneShell>
-            {VOICE_READY ? <Audio src={staticFile(`voice/${s.id}.mp3`)} /> : null}
           </Sequence>
         );
       })}
