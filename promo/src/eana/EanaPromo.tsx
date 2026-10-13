@@ -213,10 +213,13 @@ const SmallLogo: React.FC = () => (
 
 // ───────── المشاهد ─────────
 
-const Hook: React.FC<{ c: Copy }> = ({ c }) => {
+const Hook: React.FC<{ c: Copy; dur: number }> = ({ c, dur }) => {
   const frame = useCurrentFrame();
-  const strike = interpolate(frame, [38, 52], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
-  const glow = useIn(62, 12);
+  // التوقيت نسبةً لطول المشهد عشان يمشي مع نطق "الرقمي" ثم "الذكي"
+  const strikeAt = Math.round(dur * 0.48);
+  const intelAt = Math.round(dur * 0.66);
+  const strike = interpolate(frame, [strikeAt, strikeAt + 14], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+  const glow = useIn(intelAt, 12);
   return (
     <Frame c={c}>
       <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 10, padding: 80, textAlign: "center" }}>
@@ -239,7 +242,7 @@ const Hook: React.FC<{ c: Copy }> = ({ c }) => {
             />
           </div>
         </Rise>
-        <Rise delay={56} style={{ marginTop: 50 }}>
+        <Rise delay={intelAt - 8} style={{ marginTop: 50 }}>
           <div style={{ fontSize: 66, fontWeight: 600, color: "#C8D0E8" }}>{c.hook.after}</div>
         </Rise>
         <div style={{ transform: `scale(${0.6 + glow * 0.4})`, opacity: glow }}>
@@ -765,7 +768,7 @@ export const EanaPromo: React.FC<{ lang: Lang }> = ({ lang }) => {
   const c = COPY[lang];
   const tl = timeline(lang);
   const scene = (i: number, dur: number) => {
-    if (i === 0) return <Hook c={c} />;
+    if (i === 0) return <Hook c={c} dur={dur} />;
     if (i === 1) return <LogoReveal c={c} />;
     if (i === 2) return <WhatWeDo c={c} dur={dur} />;
     if (i >= 3 && i <= 7) return <ServiceScene c={c} s={c.services[i - 3]} dur={dur} />;

@@ -182,13 +182,13 @@ export const COPY: Record<Lang, Copy> = {
   },
 };
 
-// مدة كل مشهد بالثواني — تقدير مبدئي، وتتضبط على ملف الصوت لما يوصل
+// مدة كل مشهد بالثواني — العربي مضبوط على وقفات ملف الصوت، والإنجليزي تقدير لين يوصل صوته
 export const SCENE_SECS: Record<Lang, number[]> = {
   en: [4.6, 4.6, 8, 8.4, 6.2, 6, 7, 5.2, 5.8, 6.4],
-  ar: [4.6, 4.6, 8, 8.4, 6.2, 6, 7, 5.2, 5.8, 6.4],
+  ar: [4.67, 5.77, 9.56, 12.28, 7.99, 8.97, 9.07, 6.53, 6.08, 7.89],
 };
 
 // لما يوصل الصوت: public/voice/eana-<lang>.mp3 ونغيّرها لـ true
-export const VOICE: Record<Lang, boolean> = { en: false, ar: false };
+export const VOICE: Record<Lang, boolean> = { en: false, ar: true };
 
 export const stripTashkeel = (s: string) => s.replace(/[ً-ْٰ]/g, "");
