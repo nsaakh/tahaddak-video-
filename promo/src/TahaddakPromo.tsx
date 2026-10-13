@@ -8,9 +8,7 @@ import {
   useVideoConfig,
   Easing,
 } from "remotion";
-import { loadFont } from "@remotion/google-fonts/Cairo";
-
-const { fontFamily } = loadFont();
+import { fontFamily } from "./fonts";
 
 // ألوان مرحة للعائلة
 const C = {
